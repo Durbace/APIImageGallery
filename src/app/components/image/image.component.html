@@ -1,0 +1,8 @@
+<div class="image-card">
+    <img [src]="image.download_url" [alt]="image.author" (load)="onImageLoad($event)">
+    <div class="info">
+      <h3>{{ image.author }}</h3>
+      <p>Body text</p>
+    </div>
+  </div>
+  

@@ -1,0 +1,20 @@
+<div class="gallery-container">
+    <div class="filter-container">
+      <label for="author-select">Filter by Author</label>
+      <select id="author-select" [(ngModel)]="selectedAuthor" class="author-select">
+        <option value="">All Authors</option>
+        <option *ngFor="let author of authors" [value]="author">{{ author }}</option>
+      </select>
+    </div>
+  
+    <div class="gallery-grid">
+      <app-image *ngFor="let image of paginatedImages" [image]="image"></app-image>
+    </div>
+  
+    <app-pagination 
+      [currentPage]="currentPage" 
+      [totalPages]="totalPages" 
+      (pageChanged)="onPageChanged($event)">
+    </app-pagination>
+  </div>
+  
